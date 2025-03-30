@@ -8,5 +8,9 @@ namespace modulum.Application.Interfaces.Services.Account
     public interface IAccountService : IService
     {
         Task<IResult> ChangePasswordAsync(ChangePasswordRequest model, string userId);
+
+        Task<IResult> ConfirmEmail(string userId, string token);
+
+        Task<IResult> IsEmailConfirmed(string email);
     }
 }
