@@ -8,22 +8,22 @@ namespace modulum.Application.Validators.Requests.Identity
         public RegisterRequestValidator()
         {
             RuleFor(request => request.NomeCompleto)
-                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Nome Completo é obrigatório");
+                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Nome Completo' é obrigatório");
             RuleFor(request => request.Email)
-                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Email é obrigatório")
-                .EmailAddress().WithMessage(x => "Email não está no formato correto");
+                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Email' é obrigatório")
+                .EmailAddress().WithMessage(x => "Campo 'Email' não está no formato correto");
             RuleFor(request => request.UserName)
-                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "UserName é obrigatório")
-                .MinimumLength(6).WithMessage("UserName must be at least of length 6");
+                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Usuario' é obrigatório")
+                .MinimumLength(6).WithMessage("Campo 'Usuario' deve conter no minimo 6 caracteres");
             RuleFor(request => request.Password)
-                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Password is required!")
-                .MinimumLength(8).WithMessage("Password must be at least of length 8")
-                .Matches(@"[A-Z]").WithMessage("Password must contain at least one capital letter")
-                .Matches(@"[a-z]").WithMessage("Password must contain at least one lowercase letter")
-                .Matches(@"[0-9]").WithMessage("Password must contain at least one digit");
+                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Senha' é obrigatório")
+                .MinimumLength(8).WithMessage("A senha deve ter pelo menos 8 caracteres")
+                .Matches(@"[A-Z]").WithMessage("A senha deve conter pelo menos uma letra maiúscula")
+                .Matches(@"[a-z]").WithMessage("A senha deve conter pelo menos uma letra minúscula")
+                .Matches(@"[0-9]").WithMessage("A senha deve conter pelo menos um número");
             RuleFor(request => request.ConfirmPassword)
-                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Password Confirmation is required!")
-                .Equal(request => request.Password).WithMessage(x => "Passwords don't match");
+                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Confirme sua Senha' é obrigatório")
+                .Equal(request => request.Password).WithMessage(x => "Os campos 'Senha' e 'Confirme sua Senha' devem ser iguais");
         }
     }
 }

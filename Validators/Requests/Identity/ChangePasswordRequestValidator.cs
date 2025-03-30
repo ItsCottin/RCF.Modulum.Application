@@ -8,16 +8,16 @@ namespace modulum.Application.Validators.Requests.Identity
         public ChangePasswordRequestValidator()
         {
             RuleFor(request => request.Password)
-                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Current Password is required!");
+                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "A Senha Atual é obrigatório");
             RuleFor(request => request.NewPassword)
-                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Password is required!")
-                .MinimumLength(8).WithMessage("Password must be at least of length 8")
-                .Matches(@"[A-Z]").WithMessage("Password must contain at least one capital letter")
-                .Matches(@"[a-z]").WithMessage("Password must contain at least one lowercase letter")
-                .Matches(@"[0-9]").WithMessage("Password must contain at least one digit");
+                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Senha' é obrigatório")
+                .MinimumLength(8).WithMessage("A senha deve ter pelo menos 8 caracteres")
+                .Matches(@"[A-Z]").WithMessage("A senha deve conter pelo menos uma letra maiúscula")
+                .Matches(@"[a-z]").WithMessage("A senha deve conter pelo menos uma letra minúscula")
+                .Matches(@"[0-9]").WithMessage("A senha deve conter pelo menos um número");
             RuleFor(request => request.ConfirmNewPassword)
-                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Password Confirmation is required!")
-                .Equal(request => request.NewPassword).WithMessage(x => "Passwords don't match");
+                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Confirme sua Senha' é obrigatório")
+                .Equal(request => request.NewPassword).WithMessage(x => "Os campos 'Senha' e 'Confirme sua Senha' devem ser iguais");
         }
     }
 }

@@ -8,8 +8,8 @@ namespace modulum.Application.Validators.Requests.Identity
         public ForgotPasswordRequestValidator()
         {
             RuleFor(request => request.Email)
-                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Email is required")
-                .EmailAddress().WithMessage(x => "Email is not correct");
+                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Email' é obrigatório")
+                .EmailAddress().WithMessage(x => "Campo 'Email' não está no formato correto");
         }
     }
 }

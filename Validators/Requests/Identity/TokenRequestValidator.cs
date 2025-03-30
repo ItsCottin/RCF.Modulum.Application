@@ -8,10 +8,10 @@ namespace modulum.Application.Validators.Requests.Identity
         public TokenRequestValidator()
         {
             RuleFor(request => request.Email)
-                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Email is required")
-                .EmailAddress().WithMessage(x => "Email is not correct");
+                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Email' é obrigatório")
+                .EmailAddress().WithMessage(x => "Campo 'Email' não está no formato correto");
             RuleFor(request => request.Password)
-                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Password is required!");
+                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Senha' é obrigatório");
         }
     }
 }
