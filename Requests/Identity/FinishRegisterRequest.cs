@@ -1,12 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace modulum.Application.Requests.Identity
+namespace nodulum.Application.Requests.Identity
 {
-    public class RegisterRequest
-    { 
-        [Required(ErrorMessage = "O Campo 'Nome Completo' é Obrigatório")]
-        public string NomeCompleto { get; set; }
-
+    public class FinishRegisterRequest
+    {
         [Required(ErrorMessage = "O Campo 'E-Mail' é Obrigatório")]
         [EmailAddress]
         public string Email { get; set; }
@@ -18,8 +20,5 @@ namespace modulum.Application.Requests.Identity
         [Required(ErrorMessage = "O Campo 'Confirme sua Senha' é Obrigatório")]
         [Compare(nameof(Password))]
         public string ConfirmPassword { get; set; }
-
-        public bool EmailConfirmed { get; set; }
-        public bool IsCadastroFinalizado { get; set; }
     }
 }

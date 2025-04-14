@@ -3,7 +3,7 @@ using System.Linq;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using RCF.Modulum.Domain.Contracts;
+using modulum.Domain.Contracts;
 using modulum.Shared.Wrapper;
 
 namespace modulum.Application.Extensions

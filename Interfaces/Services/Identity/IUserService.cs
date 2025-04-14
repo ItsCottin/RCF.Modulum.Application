@@ -1,7 +1,9 @@
 ﻿using modulum.Application.Interfaces.Common;
+using modulum.Application.Requests.Account;
 using modulum.Application.Requests.Identity;
 using modulum.Application.Responses.Identity;
 using modulum.Shared.Wrapper;
+using nodulum.Application.Requests.Identity;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,16 +13,22 @@ namespace modulum.Application.Interfaces.Services.Identity
     {
         Task<Result<List<UserResponse>>> GetAllAsync();
 
-        Task<int> GetCountAsync();
+        Task<IResult> FimRegisterAsync(FinishRegisterRequest request, string origin);
 
-        Task<IResult<UserResponse>> GetAsync(string userId);
+        Task<IResult> PreRegisterAsync(PreRegisterRequest request, string origin);
 
-        Task<IResult> RegisterAsync(RegisterRequest request, string origin);
-
-        Task<IResult<string>> ConfirmEmailAsync(string userId, string code);
+        Task<IResult<UserResponse>> GetAsync(int userId);
 
         Task<IResult> ForgotPasswordAsync(ForgotPasswordRequest request, string origin);
 
         Task<IResult> ResetPasswordAsync(ResetPasswordRequest request);
+
+        Task<int> GetCountAsync();
+
+        Task<IResult> ConfirmEmailAsync(TwoFactorRequest request);
+
+        Task<IResult> IsEmailConfirmed(string email);
+
+        Task<IResult> ChangePasswordAsync(ChangePasswordRequest model, string userId);
     }
 }

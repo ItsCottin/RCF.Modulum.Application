@@ -6,5 +6,7 @@ namespace modulum.Application.Interfaces.Services.Account
     public interface IEmailService : IService
     {
         Task<string> SendEmail(MailRequest request);
+
+        Task<string> SubstituirCodigoNoHtml(string codigo);
     }
 }

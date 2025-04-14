@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RCF.Modulum.Application.Interfaces.Services.CoreEntity
+namespace modulum.Application.Interfaces.Services.Account
 {
-    public interface IDynamicTableService : IService
+    public interface ITwoFactorService : IService
     {
-        Task CriarTabelaFisicaAsync(int tableId);
     }
 }

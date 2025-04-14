@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using RCF.Modulum.Domain.Contracts;
+using modulum.Domain.Contracts;
 
 namespace modulum.Application.Specifications.Base
 {

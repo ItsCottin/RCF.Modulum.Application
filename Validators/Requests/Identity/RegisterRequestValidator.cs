@@ -12,9 +12,6 @@ namespace modulum.Application.Validators.Requests.Identity
             RuleFor(request => request.Email)
                 .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Email' é obrigatório")
                 .EmailAddress().WithMessage(x => "Campo 'Email' não está no formato correto");
-            RuleFor(request => request.UserName)
-                .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Usuario' é obrigatório")
-                .MinimumLength(6).WithMessage("Campo 'Usuario' deve conter no minimo 6 caracteres");
             RuleFor(request => request.Password)
                 .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Senha' é obrigatório")
                 .MinimumLength(8).WithMessage("A senha deve ter pelo menos 8 caracteres")

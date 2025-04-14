@@ -27,11 +27,11 @@
     <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.14" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="RCF.Modulum.Shared" Version="0.0.1-beta.8" />
+    <PackageReference Include="RCF.Modulum.Domain" Version="0.0.1-beta.8" />
+    <PackageReference Include="RCF.Modulum.Shared" Version="0.0.2-beta.1" />
     <PackageReference Include="System.Linq.Dynamic.Core" Version="1.6.0.2" />
 
     <!-- Pacotes proprios do projeto -->
-  <PackageReference Include="RCF.Modulum.Domain" Version="0.0.1-beta.7" />
 </ItemGroup>
 
   <!-- Referencia dos proprios pacotes para debug
@@ -49,7 +49,6 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <Folder Include="Enums\" />
     <Folder Include="Features\" />
     <Folder Include="Mappings\" />
     <Folder Include="Models\" />
