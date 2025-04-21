@@ -14,7 +14,8 @@ namespace modulum.Application.Validators.Requests.Identity
         {
             RuleFor(request => request.Email)
                 .Must(x => !string.IsNullOrWhiteSpace(x)).WithMessage(x => "Campo 'Email' é obrigatório")
-                .EmailAddress().WithMessage(x => "Campo 'Email' não está no formato correto");
+                .EmailAddress().WithMessage(x => "Campo 'Email' não está no formato correto")
+                .Matches(@"^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$").WithMessage("Campo 'Email' contem caracteres não permitidos");
         }
     }
 }
