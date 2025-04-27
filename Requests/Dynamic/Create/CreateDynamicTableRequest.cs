@@ -8,6 +8,6 @@ namespace modulum.Application.Requests.Dynamic.Create
 {
     public class CreateDynamicTableRequest : BaseDynamicTableRequest
     {
-        public List<CreateDynamicFieldRequest> Campos { get; set; } = null!;
+        public List<CreateDynamicFieldRequest> Campos { get; set; } = new ();
     }
 }

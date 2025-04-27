@@ -21,5 +21,7 @@ namespace modulum.Application.Interfaces.Services.DynamicEntity
         Task<IResult> DeleteAsync(DynamicTableRequest request);
 
         Task<IResult<DynamicTableRequest>> ConsultarDinamicoAsync(int idTabela);
+
+        Task<IResult<List<MenuRequest>>> GetMenu();
     }
 }
