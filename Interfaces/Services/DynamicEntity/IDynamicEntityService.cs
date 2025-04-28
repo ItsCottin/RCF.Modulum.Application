@@ -13,5 +13,6 @@ namespace modulum.Application.Interfaces.Services.DynamicEntity
     public interface IDynamicEntityService : IService
     {
         Task<IResult<Table>> CriarMapTabelaAsync(CreateDynamicTableRequest request);
+        Task<IResult<Table>> ConsultarMapTabelaAsync(int tableId);
     }
 }

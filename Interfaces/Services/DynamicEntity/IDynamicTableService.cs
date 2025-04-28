@@ -23,5 +23,7 @@ namespace modulum.Application.Interfaces.Services.DynamicEntity
         Task<IResult<DynamicTableRequest>> ConsultarDinamicoAsync(int idTabela);
 
         Task<IResult<List<MenuRequest>>> GetMenu();
+
+        Task<IResult<DynamicTableRequest>> GetNewObjetoDinamico(int idTabela);
     }
 }
