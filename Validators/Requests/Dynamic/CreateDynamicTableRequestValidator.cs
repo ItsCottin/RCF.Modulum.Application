@@ -28,7 +28,7 @@ namespace modulum.Application.Validators.Requests.Dynamic
                 .Matches("^[a-zA-Z0-9_]+$")
                 .WithMessage("O nome da tabela deve conter apenas letras, números e underline."); // Impedir SQL Injection, precisa ser avaliado se é nescessario mais validações
             RuleFor(x => x.NomeTela)
-                .Matches("^[a-zA-Z0-9_]+$")
+                .Matches("^[a-zA-Z0-9_ ]+$")
                 .WithMessage("O nome da tela deve conter apenas letras, números e underline."); // Impedir SQL Injection, precisa ser avaliado se é nescessario mais validações
             //RuleForEach(x => x.Campos).SetValidator(new CreateDynamicFieldRequestValidator());
             RuleForEach(x => x.Campos).SetInheritanceValidator(v =>
