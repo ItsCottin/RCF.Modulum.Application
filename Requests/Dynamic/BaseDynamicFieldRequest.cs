@@ -14,6 +14,7 @@ namespace modulum.Application.Requests.Dynamic
         public TypeColumnEnum? Tipo { get; set; }
         public int? Tamanho { get; set; }
         public bool IsPrimaryKey { get; set; }
+        public bool IsForeigeKey { get; set; }
         public bool IsObrigatorio { get; set; }
     }
 }

@@ -12,15 +12,17 @@ namespace modulum.Application.Interfaces.Services.DynamicEntity
 {
     public interface IDynamicTableService : IService
     {
-        Task<IResult> CriarTabelaFisicaAsync(Table table);
+        //Task<IResult> CriarTabelaFisicaAsync(Table table);
 
         Task<IResult> InsertAsync(DynamicTableRequest request);
 
         Task<IResult> UpdateAsync(DynamicTableRequest request);
 
-        Task<IResult> DeleteAsync(DynamicTableRequest request);
+        Task<IResult> DeletePorIdAsync(DynamicForIdRequest request);
 
-        Task<IResult<DynamicTableRequest>> ConsultarDinamicoAsync(int idTabela);
+        Task<IResult<DynamicTableRequest>> ConsultaTodosPorIdTabelaAsync(int idTabela);
+
+        Task<IResult<DynamicTableRequest>> ConsultaRegistroPorIdTabelaEIdRegistroAsync(DynamicForIdRequest request);
 
         Task<IResult<List<MenuRequest>>> GetMenu();
 

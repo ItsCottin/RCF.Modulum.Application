@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace modulum.Application.Requests.Dynamic
 {
-    public class BaseDynamicTableRequest
+    public class DynamicOpcaoRequest
     {
-        public string? NomeTabela { get; set; }
-        public string? NomeTela { get; set; }
-        public string? CampoPK { get; set; }
+        public string? ValorExibicao { get; set; }
+        public int IdRegistro { get; set; }
     }
 }

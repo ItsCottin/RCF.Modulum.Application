@@ -10,7 +10,7 @@ namespace modulum.Application.Interfaces.Repositories
     public interface ITableRepository
     {
         Task AddTable(Table table);
-        Task GetTableById(int id);
+        Task<Table?> GetTableById(int id);
         Task DeleteTable(Table table);
         Task UpdateTable(Table table);
         Task<Table?> GetTableByName(string name);
