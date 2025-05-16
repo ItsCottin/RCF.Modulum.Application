@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RCF.Modulum.Application.Requests.Identity
+namespace modulum.Application.Requests.Identity
 {
     public class CadastroExternoRequest
     {
@@ -18,5 +18,8 @@ namespace RCF.Modulum.Application.Requests.Identity
 
         [Required(ErrorMessage = "O Campo 'Password' é Obrigatório")]
         public string Password { get; set; }
+
+        [Required(ErrorMessage = "O Campo 'Name' é Obrigatório")]
+        public string Name { get; set; }
     }
 }
