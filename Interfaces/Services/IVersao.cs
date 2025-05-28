@@ -14,6 +14,6 @@ namespace RCF.Modulum.Application.Interfaces.Services
     {
         Task<IResult<List<VersaoResponse>>> GetAllVersao();
 
-        Task<bool> AddEditPacotes(PackageListResultRequest request);
+        Task<bool> AddEditPacotes(string? versao, PackageListResultRequest request);
     }
 }

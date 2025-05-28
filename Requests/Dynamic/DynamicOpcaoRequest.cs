@@ -9,6 +9,6 @@ namespace modulum.Application.Requests.Dynamic
     public class DynamicOpcaoRequest
     {
         public string? ValorExibicao { get; set; }
-        public int IdRegistro { get; set; }
+        public int? IdRegistro { get; set; }
     }
 }

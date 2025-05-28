@@ -9,6 +9,6 @@ namespace modulum.Application.Interfaces.Repositories
 {
     public interface IVersaoRepository
     {
-        Task<bool> Update(PackageListResultRequest request);
+        Task<bool> Update(string? versao, PackageListResultRequest request);
     }
 }
