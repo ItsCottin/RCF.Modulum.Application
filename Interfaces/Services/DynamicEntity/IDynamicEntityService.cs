@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using modulum.Application.Interfaces.Common;
+using modulum.Application.Requests.Dynamic;
 using modulum.Application.Requests.Dynamic.Create;
 using modulum.Application.Requests.Dynamic.Relationship;
 using modulum.Application.Requests.Dynamic.Update;
@@ -23,5 +24,6 @@ namespace modulum.Application.Interfaces.Services.DynamicEntity
         Task<IResult> DeleteMapTableAsync(int tableId);
         Task<IResult> AlterRelacionamento(List<CreateDynamicRelationshipRequest> request);
         Task<IResult<List<CreateDynamicRelationshipRequest>>> ConsultarRelacionamento(int tableId);
+        Task<IResult> DeletarRelacionamento(DynamicForIdRequest request);
     }
 }
